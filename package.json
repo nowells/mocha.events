@@ -1,6 +1,6 @@
 {
   "name": "mocha.events",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Automatically test for event cleanup for Backbone and jQuery in your Mocha tests",
   "keywords": [
     "mocha",
