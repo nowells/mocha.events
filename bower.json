@@ -1,6 +1,6 @@
 {
   "name": "mocha.events",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "backbone-amd": ">=1.0.0",
     "chai": ">=1.7.2",
