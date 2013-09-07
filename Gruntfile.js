@@ -17,29 +17,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        requirejs: {
-            build: {
-                options: {
-                    baseUrl: './',
-                    out: 'mocha.events.js',
-                    name: 'mocha_events',
-                    mainConfigFile: 'build.js',
-                    optimize: "none",
-                    exclude: ['jquery', 'underscore', 'json3', 'handlebars', 'jquery.cookie', 'hbs'],
-                    done: function(done, output) {
-                        var duplicates = require('rjs-build-analysis').duplicates(output);
-
-                        if (duplicates.length > 0) {
-                            grunt.log.subhead('Duplicates found in requirejs build:')
-                            grunt.log.warn(duplicates);
-                            done(new Error('r.js built duplicate modules, please check the excludes option.'));
-                        }
-
-                        done();
-                    }
-                }
-            }
-        },
         bump: {
             options: {
                 files: ['package.json', 'bower.json'],
@@ -64,7 +41,7 @@ module.exports = function(grunt) {
             }
         },
         jshint: {
-            all:['src/**/*.js'],
+            all:['mocha.events.js'],
             options: {
                 bitwise: true,
                 browser: true,
@@ -91,12 +68,11 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-bump');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'requirejs', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'uglify']);
     grunt.renameTask('bump', 'nonBuildBump');
     grunt.registerTask('bump', ['default', 'nonBuildBump']);
 };
