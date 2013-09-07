@@ -9,6 +9,8 @@
     "underscore": ">=1.5.1"
   },
   "ignore": [
+    ".gitignore",
+    ".travis.yml",
     "Gruntfile.js",
     "bower_components",
     "karma.conf.js",
