@@ -1,0 +1,21 @@
+{
+  "name": "mocha.events",
+  "version": "0.0.1",
+  "dependencies": {
+    "chai": ">=1.7.2",
+    "sinonjs": ">=1.7.1",
+    "jquery": ">=1.7",
+    "underscore": ">=1.5.1",
+    "backbone-amd": ">=1.0.0"
+  },
+  "ignore": [
+    "Gruntfile.js",
+    "bower_components",
+    "build.js",
+    "karma.conf.js",
+    "lib",
+    "node_modules",
+    "src",
+    "specs"
+  ]
+}
